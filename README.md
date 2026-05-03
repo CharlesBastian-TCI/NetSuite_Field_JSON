@@ -102,3 +102,5 @@ Prepared store assets include:
 ## Notes
 
 NetSuite is a trademark of Oracle and/or its affiliates. This project is not affiliated with or endorsed by Oracle.
+
+https://buymeacoffee.com/technocrat
