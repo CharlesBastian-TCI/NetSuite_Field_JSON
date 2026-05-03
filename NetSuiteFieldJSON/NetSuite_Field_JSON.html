@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NetSuite Field JSON</title>
+    <meta name="description" content="View NetSuite records as searchable JSON using SuiteScript 2.1 with page XML fallback.">
+    <style>
+      :root{
+        color-scheme:light dark;
+        --bg:#f5f6f2;
+        --text:#18211b;
+        --muted:#5c665f;
+        --line:#cfd7cf;
+        --panel:#ffffff;
+        --accent:#237a37;
+        --accent-dark:#145225;
+        --code:#101510;
+        --code-text:#82f08a;
+      }
+
+      @media (prefers-color-scheme:dark){
+        :root{
+          --bg:#101410;
+          --text:#eef4ed;
+          --muted:#aab7ad;
+          --line:#334033;
+          --panel:#171d17;
+          --accent:#66d46a;
+          --accent-dark:#a2f2a5;
+          --code:#050805;
+          --code-text:#79f57f;
+        }
+      }
+
+      *{
+        box-sizing:border-box;
+      }
+
+      body{
+        margin:0;
+        background:var(--bg);
+        color:var(--text);
+        font-family:Arial, Helvetica, sans-serif;
+        line-height:1.55;
+      }
+
+      a{
+        color:var(--accent-dark);
+      }
+
+      .shell{
+        width:min(1040px, calc(100% - 32px));
+        margin:0 auto;
+      }
+
+      header{
+        padding:40px 0 24px;
+        border-bottom:1px solid var(--line);
+      }
+
+      .brand{
+        display:flex;
+        align-items:center;
+        gap:16px;
+      }
+
+      .brand img{
+        width:72px;
+        height:72px;
+      }
+
+      h1{
+        margin:0;
+        color:var(--accent);
+        font-size:clamp(32px, 7vw, 62px);
+        line-height:1;
+      }
+
+      .tagline{
+        max-width:720px;
+        margin:18px 0 0;
+        color:var(--muted);
+        font-size:20px;
+      }
+
+      .actions{
+        display:flex;
+        flex-wrap:wrap;
+        gap:12px;
+        margin-top:24px;
+      }
+
+      .button{
+        display:inline-flex;
+        align-items:center;
+        min-height:42px;
+        padding:10px 16px;
+        border:1px solid var(--accent);
+        border-radius:6px;
+        color:#fff;
+        background:var(--accent);
+        font-weight:700;
+        text-decoration:none;
+      }
+
+      .button.secondary{
+        color:var(--accent-dark);
+        background:transparent;
+      }
+
+      main{
+        padding:28px 0 48px;
+      }
+
+      section{
+        padding:24px 0;
+        border-bottom:1px solid var(--line);
+      }
+
+      h2{
+        margin:0 0 12px;
+        color:var(--accent);
+        font-size:26px;
+      }
+
+      p{
+        max-width:760px;
+        margin:0 0 12px;
+      }
+
+      ul{
+        max-width:780px;
+        margin:0;
+        padding-left:22px;
+      }
+
+      li{
+        margin:8px 0;
+      }
+
+      .grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+        gap:14px;
+        margin-top:16px;
+      }
+
+      .tile{
+        min-height:120px;
+        padding:16px;
+        border:1px solid var(--line);
+        border-radius:8px;
+        background:var(--panel);
+      }
+
+      .tile h3{
+        margin:0 0 8px;
+        color:var(--accent);
+        font-size:18px;
+      }
+
+      .tile p{
+        margin:0;
+        color:var(--muted);
+      }
+
+      pre{
+        max-width:780px;
+        overflow:auto;
+        margin:16px 0 0;
+        padding:16px;
+        border-radius:8px;
+        background:var(--code);
+        color:var(--code-text);
+        font-size:13px;
+      }
+
+      footer{
+        padding:22px 0 34px;
+        color:var(--muted);
+        font-size:14px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="shell">
+        <div class="brand">
+          <img src="26.5.2_0/img/icon128.png" alt="">
+          <div>
+            <h1>NetSuite Field JSON</h1>
+            <p class="tagline">A focused Chrome extension for viewing NetSuite records as searchable JSON, with SuiteScript 2.1 extraction first and page XML fallback when scripting is unavailable.</p>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="button" href="https://chrome.google.com/webstore" rel="noopener">Chrome Web Store</a>
+          <a class="button secondary" href="#privacy">Privacy</a>
+          <a class="button secondary" href="mailto:Client_Support@TechnocratConsultingInc.com">Support</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="shell">
+        <section>
+          <h2>What It Does</h2>
+          <p>NetSuite Field JSON opens from a NetSuite record page and renders the record data in a filterable JSON view. It is built for administrators, developers, consultants, and power users who need to inspect field IDs, field values, sublists, and record metadata without building a one-off script.</p>
+          <div class="grid">
+            <div class="tile">
+              <h3>SuiteScript First</h3>
+              <p>Uses SuiteScript 2.1 in the active NetSuite page when Chrome scripting permission is available.</p>
+            </div>
+            <div class="tile">
+              <h3>XML Fallback</h3>
+              <p>Falls back to the NetSuite page XML view when scripting is unavailable or blocked.</p>
+            </div>
+            <div class="tile">
+              <h3>Searchable Output</h3>
+              <p>Formats the result as JSON and filters the visible output as you type.</p>
+            </div>
+            <div class="tile">
+              <h3>Reference Links</h3>
+              <p>Includes quick links to the REST API Browser and Records Catalog for supported record types.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>How To Use</h2>
+          <ul>
+            <li>Open a NetSuite record page.</li>
+            <li>Click the NetSuite Field JSON extension icon.</li>
+            <li>Wait for the record to load, then search or scroll through the JSON.</li>
+            <li>Use the footer links to jump to NetSuite documentation for the current record type.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Permissions</h2>
+          <p>The extension uses a small set of Chrome permissions so it can run only when the user opens it on a NetSuite page.</p>
+          <ul>
+            <li><strong>activeTab:</strong> gives the extension temporary access to the active NetSuite tab after the user clicks the extension.</li>
+            <li><strong>scripting:</strong> allows the extension to run a small, user-invoked script in the active NetSuite page to read the record through SuiteScript 2.1.</li>
+            <li><strong>declarativeContent:</strong> enables the extension icon only on NetSuite application pages.</li>
+          </ul>
+        </section>
+
+        <section id="privacy">
+          <h2>Privacy</h2>
+          <p>NetSuite Field JSON does not collect, sell, transmit, or store user data. Record data is read from the active NetSuite page only after the user opens the extension, and the result is displayed locally in the extension popup.</p>
+          <p>The extension does not include analytics, remote logging, advertising trackers, or external data services.</p>
+          <p><a href="https://www.technocratconsultinginc.com/NetSuite-Field-JSON-Privacy">View the privacy policy.</a></p>
+        </section>
+
+        <section>
+          <h2>Example Output</h2>
+          <pre>{
+  "source":"SuiteScript 2.1",
+  "recordType":"salesorder",
+  "id":"DEMO_RECORD_ID",
+  "bodyFields":{
+    "tranid":{
+      "text":"DEMO-SO-0000",
+      "value":"DEMO-SO-0000"
+    }
+  },
+  "lineFields":{
+    "item":[]
+  }
+}</pre>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="shell">
+        NetSuite Field JSON by Charles.Bastian. NetSuite is a trademark of Oracle and/or its affiliates.
+      </div>
+    </footer>
+  </body>
+</html>
