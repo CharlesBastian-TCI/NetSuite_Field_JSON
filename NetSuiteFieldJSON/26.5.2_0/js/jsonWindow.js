@@ -2,7 +2,7 @@
  * Author       Charles.Bastian@TechnocratConsultingInc.com
  * Created      2026-04-15
  * Filename     jsonWindow.js
- * GitHub       
+ * GitHub       https://github.com/CharlesBastian-TCI/NetSuite_Field_JSON
  * 
  * modifications
  *  Date          Author            Version       Remarks
